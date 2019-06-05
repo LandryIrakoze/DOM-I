@@ -37,14 +37,37 @@ const siteContent = {
   },
 };
 
+// //Functions
+// const contentFill = function(elements, jsonData) {
+//   for(let i = 0; i < elements.length; i++) {
+//     elements[i].textContent = jsonData[i];
+//   }
+// }
 
 //Header
-let nav = document.querySelectorAll('a');
-let navItems = Object.values(siteContent.nav);
+let links = document.querySelectorAll('a');
+let linkItems = Object.values(siteContent.nav);
 
-for(let i = 0; i < nav.length; i++) {
-  nav[i].textContent = navItems[i];
+for(let i = 0; i < links.length; i++) {
+  links[i].textContent = linkItems[i];
 };
+
+let nav = document.querySelector('nav');
+
+const blog = document.createElement('a');
+blog.textContent = 'Blog';
+blog.setAttribute('href', '#');
+blog.style.color = "darkolivegreen";
+
+const feedBack = document.createElement('a');
+feedBack.textContent = 'Feedback';
+feedBack.setAttribute('href', '#');
+feedBack.style.color = "darkolivegreen";
+
+nav.appendChild(blog);
+nav.appendChild(feedBack);
+
+links.forEach(item => item.style.color = "darkolivegreen");
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
@@ -89,7 +112,6 @@ contactHeader.textContent = contactHeaderItem;
 for(let i = 0; i < contactContent.length; i++) {
   contactContent[i].textContent = contactContentItems[i + 1];
 };
-
 
 //Footer
 let footer = document.querySelector('footer p');
