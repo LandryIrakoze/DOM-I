@@ -64,7 +64,7 @@ feedBack.textContent = 'Feedback';
 feedBack.setAttribute('href', '#');
 feedBack.style.color = "darkolivegreen";
 
-nav.appendChild(blog);
+nav.prepend(blog);
 nav.appendChild(feedBack);
 
 links.forEach(item => item.style.color = "darkolivegreen");
