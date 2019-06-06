@@ -37,6 +37,82 @@ const siteContent = {
   },
 };
 
+// //Functions
+// const contentFill = function(elements, jsonData) {
+//   for(let i = 0; i < elements.length; i++) {
+//     elements[i].textContent = jsonData[i];
+//   }
+// }
+
+//Header
+let links = document.querySelectorAll('a');
+let linkItems = Object.values(siteContent.nav);
+
+for(let i = 0; i < links.length; i++) {
+  links[i].textContent = linkItems[i];
+};
+
+let nav = document.querySelector('nav');
+
+const blog = document.createElement('a');
+blog.textContent = 'Blog';
+blog.setAttribute('href', '#');
+blog.style.color = "darkolivegreen";
+
+const feedBack = document.createElement('a');
+feedBack.textContent = 'Feedback';
+feedBack.setAttribute('href', '#');
+feedBack.style.color = "darkolivegreen";
+
+nav.prepend(blog);
+nav.appendChild(feedBack);
+
+links.forEach(item => item.style.color = "darkolivegreen");
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+//CTA
+let ctaText = document.querySelector('.cta-text h1');
+ctaText.textContent = siteContent.cta.h1;
+
+let ctaBtn = document.querySelector('.cta-text button');
+ctaBtn.textContent = siteContent.cta.button;
+
+let ctaImg = document.querySelector('#cta-img');
+ctaImg.src = "img/header-img.png";
+
+
+//Main-Content
+let contentHeader = document.querySelectorAll('.text-content h4');
+let contentHeaderItems = Object.keys(siteContent["main-content"]).filter(item => item.includes('h4'));
+
+let contentText = document.querySelectorAll('.text-content p');
+let contentTextItems = Object.keys(siteContent["main-content"]).filter(item => item.includes('content'));
+
+for(let i = 0; i < contentHeader.length; i++) {
+  contentHeader[i].textContent = siteContent["main-content"][contentHeaderItems[i]];
+  contentText[i].textContent = siteContent["main-content"][contentTextItems[i]];
+};
+
+let middleImg = document.querySelector('#middle-img');
+middleImg.src = "img/mid-page-accent.jpg";
+
+
+//Contact
+let contactHeader = document.querySelector('.contact h4');
+let contactContent = document.querySelectorAll('.contact p');
+
+let contactHeaderItem = siteContent.contact["contact-h4"];
+let contactContentItems = Object.values(siteContent.contact);
+
+contactHeader.textContent = contactHeaderItem;
+for(let i = 0; i < contactContent.length; i++) {
+  contactContent[i].textContent = contactContentItems[i + 1];
+};
+
+//Footer
+let footer = document.querySelector('footer p');
+footer.textContent = siteContent.footer.copyright;
