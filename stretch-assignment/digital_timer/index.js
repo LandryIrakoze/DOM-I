@@ -23,6 +23,7 @@ const increment = () => {
     secondTens.textContent = Math.floor(count / 1000) % 10;
     if (count === 1000) {
         clearInterval(timer);
+        digits.forEach(item => item.classList.toggle('redDigit'))
     }
 }
 
@@ -39,6 +40,10 @@ const toggle = () => {
 }
 
 const resetTimer = () => {
+    if (count === 1000) {
+        digits.forEach(item => item.classList.toggle('redDigit'));
+    }
+
     count = 0;
     msTens.textContent = 0
     msHundreds.textContent = 0;
