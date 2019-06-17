@@ -38,12 +38,31 @@ const siteContent = {
 };
 
 //    Nav
+const navContainer = document.querySelector('nav');
 const navItems = document.querySelectorAll('nav a');
 const navItemData = Object.values(siteContent.nav);
 
 for (let i = 0; i < navItems.length; i++) {
   navItems[i].textContent = navItemData[i];
 }
+
+//    New Nav Items
+let blog = document.createElement('a');
+let shop = document.createElement('a');
+
+blog.href = '#';
+shop.href = '#';
+
+blog.textContent = 'Blog';
+shop.textContent = 'Shop';
+
+blog.style.color = 'green';
+shop.style.color = 'green';
+
+navContainer.appendChild(blog);
+navContainer.appendChild(shop);
+
+navItems.forEach(item => item.style.color = 'green');
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");

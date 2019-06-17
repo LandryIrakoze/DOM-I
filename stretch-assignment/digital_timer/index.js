@@ -50,3 +50,4 @@ const resetTimer = () => {
     secondOnes.textContent = 0;
     secondTens.textContent = 0;
 }
+
