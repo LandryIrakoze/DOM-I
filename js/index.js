@@ -37,13 +37,6 @@ const siteContent = {
   },
 };
 
-// //Functions
-// const contentFill = function(elements, jsonData) {
-//   for(let i = 0; i < elements.length; i++) {
-//     elements[i].textContent = jsonData[i];
-//   }
-// }
-
 //Header
 let links = document.querySelectorAll('a');
 let linkItems = Object.values(siteContent.nav);

@@ -30,7 +30,7 @@ button {
 }
 
 .redDigit {
-  color: red;
+  color: tomato;
 }
 
 .btn-container {
@@ -42,7 +42,7 @@ button {
 }
 
 .stop {
-  background-color: red;
+  background-color: tomato;
 }
 
 #reset {
